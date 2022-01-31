@@ -5,13 +5,14 @@ import Header from '../components/header'
 import styles from '../styles/Home.module.css'
 import Tick from '../assets/tick.svg';
 import { useState } from 'react'
+import { getCookie } from 'cookies-next'
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (val) => {
     try {
       setLoading(true);
-      const email = localStorage.getItem('222__email')
+      const email = getCookie('222__email')
       const address = val.address;
       const res = await fetch('/api/submit',
         {
