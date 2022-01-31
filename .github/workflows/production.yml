@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout Here
         uses: actions/checkout@v2
-      # - name: Build Production
-      #   run: |
-      #     npm ci
-      #     CI= npm run build
+      - name: Build Production
+        run: |
+          npm ci
+          CI= npm run build
       - name: Install ssh key
         uses: shimataro/ssh-key-action@v2
         with:

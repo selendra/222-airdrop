@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import selendra from '../assets/selendra.png';
 import { LogoutOutlined } from '@ant-design/icons';
 import { setCookies } from 'cookies-next';
+import styles from '../styles/Header.module.css';
 
 export default function Header({ auth }) {
   const router = useRouter();
@@ -15,16 +16,16 @@ export default function Header({ auth }) {
   return (
     <div>
       { auth ?
-        <div className='header__auth'>
+        <div className={styles.header__auth}>
           <Image src={selendra} alt='' height='50' width='120' />
-          <Button onClick={handleLogout} className='logout'>Logout<LogoutOutlined /></Button>
+          <Button onClick={handleLogout} className={styles.logout}>Logout<LogoutOutlined /></Button>
         </div> 
         :
-        <div className="header">
+        <div className={styles.header}>
           <Image src={selendra} alt='' height='50' width='120' />
         </div>
       }
-      <div className='magic__line' />
+      <div className={styles.magic__line} />
     </div>
   );
 }
