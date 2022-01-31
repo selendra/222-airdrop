@@ -4,14 +4,16 @@ import Header from "../components/header";
 import giftbox from '../assets/gift.gif';
 import { GoogleLogin } from 'react-google-login';
 import { useRouter } from "next/router";
+import { getCookie, setCookies } from 'cookies-next';
 
 export default function Login() {
   const router = useRouter();
   const responseSuccess = async (response) => {
     try {
+      console.log(response)
       const { profileObj } = response;
       if(profileObj) { 
-        localStorage.setItem('222__email', profileObj.email);
+        setCookies('222__email', profileObj.email);
         router.push('/');
       }
     } catch (error) {
@@ -32,9 +34,9 @@ export default function Login() {
             <p className="login__text">You are invited to join this special moment of Selendra's new chapter🎉</p>
             <GoogleLogin
               clientId="920463513406-pen1v1u7jd0nht7e4iugrrvvn0fep1eb.apps.googleusercontent.com"
-              cookiePolicy={'single_host_origin'}
               className='google__btn'
               onSuccess={responseSuccess}
+              cookiePolicy={'single_host_origin'}
             />
           </div>
         </div>

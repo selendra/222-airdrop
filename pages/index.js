@@ -70,3 +70,11 @@ export default function Home() {
     </div>
   )
 }
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      protected: true
+    }
+  };
+}

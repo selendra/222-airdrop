@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import selendra from '../assets/selendra.png';
 import { LogoutOutlined } from '@ant-design/icons';
+import { setCookies } from 'cookies-next';
 
 export default function Header({ auth }) {
   const router = useRouter();
   function handleLogout() {
-    localStorage.setItem('222__email', '');
+    setCookies('222__email', '');
     router.push('/login');
   }
 
