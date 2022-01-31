@@ -41,7 +41,7 @@
   color: #85A1AD;
   margin-bottom: 8px;
 }
-.info svg{
-  margin-right: 4px;
-  margin-bottom: -2px;
+.info img {
+  margin-right: 2px!important;
+  margin-bottom: -1px!important;
 }
