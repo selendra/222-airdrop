@@ -12,6 +12,14 @@
   padding: 40px;
   margin: 145px 0;
 }
+@media screen and (max-width: 680px) {
+  .container {
+    margin: 0 20px;
+  }
+  .login__card {
+    grid-template-columns: auto;
+  }
+}
 .login__card div:nth-child(1) {
   display: flex;
   justify-content: center;

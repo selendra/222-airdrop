@@ -25,7 +25,7 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <center>
+      <center className={styles.container}>
         <div className={styles.login__card}>
           <div>
             <Image src={giftbox} alt='' width='90' height='90'  />
@@ -33,12 +33,16 @@ export default function Login() {
           <div>
             <p className={styles.login__title}>Celebrate Selendra Mainnet Launch <span>Claim 222 SEL native token.</span></p>
             <p className={styles.login__text}>You are invited to join this special moment of Selendra's new chapter🎉</p>
-            <GoogleLogin
-              clientId="920463513406-pen1v1u7jd0nht7e4iugrrvvn0fep1eb.apps.googleusercontent.com"
-              className={styles.google__btn}
-              onSuccess={responseSuccess}
-              cookiePolicy={'single_host_origin'}
-            />
+            <div suppressHydrationWarning={true}>
+              {
+                process.browser && <GoogleLogin
+                  clientId="920463513406-pen1v1u7jd0nht7e4iugrrvvn0fep1eb.apps.googleusercontent.com"
+                  className={styles.google__btn}
+                  onSuccess={responseSuccess}
+                  cookiePolicy={'single_host_origin'}
+                />
+              }
+            </div>
           </div>
         </div>
       </center>
