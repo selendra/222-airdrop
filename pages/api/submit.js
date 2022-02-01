@@ -31,7 +31,11 @@ const checkSpreadsheet = async (row) => {
   })
   const client = await auth.getClient()
   const sheet = google.sheets({ version: 'v4', auth: client })
-  const { data: { values } } = await sheet.spreadsheets.values.get({ auth, spreadsheetId: SPREADSHEET_ID,  range: `${SHEET_TITLE}!A1:B` })
+  const { data: { values } } = await sheet.spreadsheets.values.get({ 
+    auth, 
+    spreadsheetId: SPREADSHEET_ID,  
+    range: `${SHEET_TITLE}!A1:B` 
+  })
 
   for(let i=values.length-1; i>0; i--) {
     if(values[i][0] == row.email || values[i][1] == row.address) {
@@ -43,7 +47,9 @@ const checkSpreadsheet = async (row) => {
 
 const isvalidSubstrateAddress = (address) => {
   const check = checkAddress(address, 42);
-  if (check[0]) {
+  const check2 = checkAddress(address, 972);
+
+  if (check[0] || check2[0]) {
     return true;
   } else {
     return false;
@@ -86,7 +92,7 @@ export default async function handler(req, res) {
       res.status(400).json({ 
         code: 400,
         data: {
-          message: "selendra account must be prefixed by 5"
+          message: "selendra account is not valid!"
         }
       })
     }
