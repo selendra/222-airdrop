@@ -57,7 +57,7 @@ export default function Home() {
               name="address"
               rules={[{ required: true, message: 'Please input your Selendra address!' }]}
             >
-              <Input placeholder="5xx" className="input" />
+              <Input placeholder="Please input Selendra address" className="input" />
             </Form.Item>
             <Form.Item>
               <Button htmlType='submit' loading={loading} className={styles.button}>Claim</Button>
