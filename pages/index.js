@@ -60,7 +60,7 @@ export default function Home() {
               <Input placeholder="Please input Selendra address" className="input" />
             </Form.Item>
             <Form.Item>
-              <Button htmlType='submit' loading={loading} className={styles.button}>Claim</Button>
+              <Button htmlType='submit' disabled loading={loading} className={styles.button}>Claim</Button>
             </Form.Item>
           </Form>
           <p>You will:</p>
