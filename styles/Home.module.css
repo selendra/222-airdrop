@@ -45,3 +45,8 @@
   margin-right: 2px!important;
   margin-bottom: -1px!important;
 }
+.alert {
+  max-width: 550px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

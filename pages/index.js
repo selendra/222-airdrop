@@ -1,4 +1,4 @@
-import { Button, Form, Input, message } from 'antd'
+import { Alert, Button, Form, Input, message } from 'antd'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/header'
@@ -62,6 +62,7 @@ export default function Home() {
             <Form.Item>
               <Button htmlType='submit' disabled loading={loading} className={styles.button}>Claim</Button>
             </Form.Item>
+            <Alert className={styles.alert} message="Airdrop has ended. Thanks for your participate." type="error" showIcon />
           </Form>
           <p>You will:</p>
           <p className={styles.info}><Image className={styles.icon} src={Tick} alt='' width='16' height='16' />Receive 222 SEL native token when its mainnet launch on February 2nd, 2022.</p>
